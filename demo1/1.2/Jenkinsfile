@@ -5,12 +5,12 @@ pipeline {
     }
     stages {
         stage('Build') {
-            agent any
             environment {
                 LOG_LEVEL='INFO'
             }
             parallel {
                 stage('linux-arm64') {
+                    agent any
                     steps {
                         echo "Building release ${RELEASE} for ${STAGE_NAME} with log level ${LOG_LEVEL}"
                     }
