@@ -1,10 +1,7 @@
-// library identifier: 'jenkins-library-sessions@master',
-//         retriever: modernSCM([$class: 'GitSCMSource', remote: 'https://github.com/JaimeSalas/jenkins-library-sessions.git'])
-
 pipeline {
     agent {
         docker {
-            image ''
+            image 'mcr.microsoft.com/dotnet/core/sdk:3.1.101'
         }
     }
     environment {
